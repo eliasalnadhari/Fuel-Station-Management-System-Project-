@@ -1,0 +1,1502 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+const int size=10; 
+class Global{
+	protected:
+	double outputs1;    //first capital          
+	double how_many_liters_petrol; //to know how much petrol he has
+	double how_many_liters_diesel;
+	double how_many_liters_gas;
+	double outputs2; //second capital
+	double sum_liters_money;
+	int todays_price_petrol;//to know the pruce per liter today
+	int todays_price_diesel;
+	int todays_price_gas;
+	int st_ins=0;//in order to confirm whether the user has an account or not 
+	//----------class Initialize-------------
+	string employee_name[size];
+	int employee_number[size];
+	int ID_card_number[size];
+	string address[size];
+	int salary[size];
+	int number_of_employees;
+	int choosse;
+	int si1ze;
+	int ID_card_number_user;
+	int st;
+	int The_rest_of_the_salary;
+	int salary_received;
+	
+		//------------class employees--------
+	int trnaba_number_petrol[size]; 
+	string  employee_name_tromba_petrol[size];
+    double read_the_previous_tromba_petrol[size];
+	double current_trumpet_reading_petrol[size]; 
+	double quantity_of_literes_sold_in_one_tromba_petrol[size];
+	double quantity_of_literes_sold_in_all_tromba_petrol;
+	double quantity_of_money_sold_in_one_tromba_petrol[size];
+	double quantity_of_money_sold_in_all_tromba_petrol;
+	
+		int trnaba_number_diesel[size];
+	string  employee_name_tromba_diesel[size];
+    double read_the_previous_tromba_diesel[size];
+	double current_trumpet_reading_diesel[size]; 
+	double quantity_of_literes_sold_in_one_tromba_diesel[size];
+	double quantity_of_literes_sold_in_all_tromba_diesel;
+	double quantity_of_money_sold_in_one_tromba_diesel[size];
+	double quantity_of_money_sold_in_all_tromba_diesel;
+	
+	int trnaba_number_gas[size];
+	string  employee_name_tromba_gas[size];
+    double read_the_previous_tromba_gas[size];
+	double current_trumpet_reading_gas[size]; 
+	double quantity_of_literes_sold_in_one_tromba_gas[size];
+	double quantity_of_literes_sold_in_all_tromba_gas;
+	double quantity_of_money_sold_in_one_tromba_gas[size];
+	double quantity_of_money_sold_in_all_tromba_gas;
+	
+	int number_of_tromba;
+	double selling_price_petrol;
+	double selling_price_diesel;
+	double selling_price_gas;
+    int choooes;
+	//----------------class salse---------
+		float zakat;
+		float for_miscellaneous;
+		string notes_for_miscellaneous;
+	    float all_miscellaneous;
+	    float the_profits;
+	     int choose;
+	//-------------class output--------------- 
+
+	int choes_buy;
+//--------------class Purchase---------------- 
+   	double mq_petrol;
+	double mq_diesel;
+	double mq_gas;
+	double The_remaining_liters_petrol;
+	double The_remaining_liters_diesel;
+	double The_remaining_liters_gas;
+	
+	double price_per_liter_petrol;
+ 	double liters_of_demand_petrol;
+ 	double resulting_petrol;
+ 	
+ 	double price_per_liter_diesel;
+ 	double liters_of_demand_diesel;
+ 	double resulting_diesel;
+ 	
+ 	double price_per_liter_gas;
+ 	double liters_of_demand_gas;
+ 	double resulting_gas;
+ 	int chooes_purchase	;
+ 		int z;
+//-------------class Story_management----------	
+};
+
+class Initialize :public Global{	//this class is for the user to start creating an account and entering the account balance
+	public:
+		
+	void initialize(){
+		system("color E0");
+		system("cls");
+		if(st_ins==0){
+		
+	st=1;
+	si1ze=0;
+	mq_petrol=0;
+    mq_diesel=0;
+	mq_gas=0;
+	outputs1=0;	
+	outputs2=0;	
+	sum_liters_money=0;
+	quantity_of_literes_sold_in_all_tromba_petrol=0;
+	quantity_of_literes_sold_in_all_tromba_diesel=0;
+	quantity_of_literes_sold_in_all_tromba_gas=0;
+	//-----------------------------------------------
+	outputs1:
+	cout<<"How much money do you have?"<<endl;	
+	cin>>outputs1;
+	
+	if(cin.fail()){
+		
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto outputs1;
+	}
+	else if(outputs1<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto outputs1;	
+	}
+	todays_price_petrol:
+	cout<<"What is the price of petrol today"<<endl;
+	cin>>todays_price_petrol;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto todays_price_petrol;	
+	}
+		else if(todays_price_petrol<0) {
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto todays_price_petrol;	
+	}
+	how_many_liters_petrol:
+	cout<<"How many liters petrol do you have "<<endl;
+	cin>>how_many_liters_petrol;
+			if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto how_many_liters_petrol;	
+	}
+		else if(how_many_liters_petrol<0) {
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto how_many_liters_petrol;	
+	}
+	mq_petrol+=how_many_liters_petrol;
+	todays_price_diesel:
+	cout<<"What is the price of diesel today"<<endl;
+	cin>>todays_price_diesel;
+			if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto todays_price_diesel;	
+	}
+		else if(todays_price_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto todays_price_diesel;	
+	}
+	how_many_liters_diesel:
+	cout<<"How many liters diesel do you have  "<<endl;
+	cin>>how_many_liters_diesel;
+				if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto how_many_liters_diesel;	
+	}
+		else if(how_many_liters_diesel<0) {
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto how_many_liters_diesel;	
+	}
+	
+		mq_diesel+=how_many_liters_diesel;
+		
+		todays_price_gas:
+	cout<<"What is the price of gas today"<<endl;
+	cin>>todays_price_gas;
+				if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto todays_price_gas;	
+	}
+		else if(todays_price_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto todays_price_gas;	
+	}
+	how_many_liters_gas:
+	cout<<"How many liters gas do you have  "<<endl;
+	cin>>how_many_liters_gas;
+				if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto how_many_liters_gas;	
+	}
+		else if(how_many_liters_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto how_many_liters_gas;	
+	}
+	mq_gas+=how_many_liters_gas;
+	sum_liters_money+=how_many_liters_petrol*todays_price_petrol;
+	sum_liters_money+=how_many_liters_diesel*todays_price_diesel;
+	sum_liters_money+=how_many_liters_gas*todays_price_gas;
+	outputs1=outputs1+sum_liters_money;
+	outputs2=outputs1;
+	cout<<"first capital  ="<<outputs1<<endl;
+	cout<<"second capital = "<<outputs2<<endl;
+	st_ins=1;
+	}
+	else {
+		cout<<"\n\n--------------(((((((((((((The account already exists)))))))))))))--------------\n\n"<<endl;
+	}
+	cout<<"Enter any key for back\n";
+	getch();
+	}			
+};
+
+class Sales :public Initialize{//in this class daily sales of gas ,petroleum and diesel are calculated
+public:
+	void petrol(){
+		system("cls");
+		if(st_ins!=0){
+		number_of_tromba:	
+			cout<<"How many tromba are there of petrol?\n";
+		cin>> number_of_tromba;
+	    if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto number_of_tromba;	
+	}
+		else if(number_of_tromba<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto number_of_tromba;	
+	}
+	selling_price_petrol:
+		cout<<"Enter today's selling price for petrol\n";
+		cin>>selling_price_petrol;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto selling_price_petrol;	
+	}
+		else if(selling_price_petrol<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto selling_price_petrol;	
+	}
+			for(int i=1;i<= number_of_tromba;i++){
+		trnaba_number_petrol:		
+		cout<<"Enter the trnaba number of petrol"<<endl;
+		cin>>trnaba_number_petrol[i];
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto trnaba_number_petrol;	
+	}
+		else if(trnaba_number_petrol<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto trnaba_number_petrol;	
+	}
+		cout<<"Enter the employee name of petrol"<<endl;
+		cin>>employee_name_tromba_petrol[i];
+		read_the_previous_tromba_petrol:
+		cout<<"Enter the read_the previous_tromba of petrol"<<endl;	
+		cin>>read_the_previous_tromba_petrol[i];
+		
+			if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto read_the_previous_tromba_petrol;	
+	}
+			else if(read_the_previous_tromba_petrol<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto read_the_previous_tromba_petrol;	
+	}
+	current_trumpet_reading_petrol:
+		cout<<"Enter the current trumpet reading of petrol"<<endl;
+		cin>>current_trumpet_reading_petrol[i];
+		if(current_trumpet_reading_petrol>read_the_previous_tromba_petrol){
+			cout<<"erorr";
+		}
+					if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto current_trumpet_reading_petrol;	
+	}
+			else if(current_trumpet_reading_petrol<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto current_trumpet_reading_petrol;	
+	}
+		quantity_of_literes_sold_in_one_tromba_petrol[i]=current_trumpet_reading_petrol[i]-read_the_previous_tromba_petrol[i];
+        quantity_of_literes_sold_in_all_tromba_petrol+= quantity_of_literes_sold_in_one_tromba_petrol[i];
+        quantity_of_money_sold_in_one_tromba_petrol[i]=quantity_of_literes_sold_in_one_tromba_petrol[i] * selling_price_petrol;
+        quantity_of_money_sold_in_all_tromba_petrol=quantity_of_literes_sold_in_all_tromba_petrol * selling_price_petrol;
+        
+        }
+        cout<<"quantity of literes sold in all tromba petrol = "<<quantity_of_literes_sold_in_all_tromba_petrol<<endl;
+        cout<<"quantity of money sold in all tromba petrol = "<<quantity_of_money_sold_in_all_tromba_petrol<<endl;
+        outputs2+=quantity_of_money_sold_in_all_tromba_petrol;
+		}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+		cout<<"Enter any key for back\n";
+	getch();
+	}
+	void diesel(){
+		system("cls");
+		if(st_ins!=0){
+			number_of_tromba:
+		  cout<<"How many tromba are there of diesel?\n";
+		cin>> number_of_tromba;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto number_of_tromba;	
+	}
+			else if(number_of_tromba<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+		goto number_of_tromba;	
+	
+	}
+	selling_price_diesel:
+		cout<<"Enter today's selling price for diesel \n";
+		cin>>selling_price_diesel;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto selling_price_diesel;	
+	}
+			else if(selling_price_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+				goto selling_price_diesel;
+	}
+		for(int i=1;i<= number_of_tromba;i++){
+			trnaba_number_diesel:
+		cout<<"Enter the trnaba number of diesel"<<endl;
+		cin>>trnaba_number_diesel[i];
+			if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto trnaba_number_diesel;	
+	}
+			else if(trnaba_number_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto trnaba_number_diesel;	
+	}
+		cout<<"Enter the employee name of diesel"<<endl;
+		cin>>employee_name_tromba_diesel[i];
+		
+		read_the_previous_tromba_diesel:
+		cout<<"Enter the read the previous tromba of diesel"<<endl;	
+		cin>>read_the_previous_tromba_diesel[i];
+					if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto read_the_previous_tromba_diesel;	
+	}
+			else if(read_the_previous_tromba_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto read_the_previous_tromba_diesel;	
+	}
+	current_trumpet_reading_diesel:
+		cout<<"Enter the current trumpet reading of diesel"<<endl;
+		cin>>current_trumpet_reading_diesel[i];
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto current_trumpet_reading_diesel;	
+	}
+			else if(current_trumpet_reading_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto current_trumpet_reading_diesel;	
+	}
+		quantity_of_literes_sold_in_one_tromba_diesel[i]=current_trumpet_reading_diesel[i]-read_the_previous_tromba_diesel[i];
+        quantity_of_literes_sold_in_all_tromba_diesel+= quantity_of_literes_sold_in_one_tromba_diesel[i];
+        quantity_of_money_sold_in_one_tromba_diesel[i]=quantity_of_literes_sold_in_one_tromba_diesel[i] * selling_price_diesel;
+        quantity_of_money_sold_in_all_tromba_diesel=quantity_of_literes_sold_in_all_tromba_diesel * selling_price_diesel;
+        
+        }
+        cout<<"quantity of literes sold in all tromba diesel = "<<quantity_of_literes_sold_in_all_tromba_diesel<<endl;
+        cout<<"quantity of money sold in all tromba diesel = "<<quantity_of_money_sold_in_all_tromba_diesel<<endl;
+        outputs2+=quantity_of_money_sold_in_all_tromba_diesel;
+		}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+		cout<<"Enter any key for back\n";
+	getch();
+	}
+	void gas(){
+		system("cls");
+		if(st_ins!=0){
+	number_of_tromba:
+	 cout<<"How many tromba are there of gas?\n";
+	cin>> number_of_tromba;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto number_of_tromba;	
+	}
+			else if(number_of_tromba<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto number_of_tromba;	
+	}
+	selling_price_gas:
+	cout<<"Enter today's selling price for gas\n";
+		cin>>selling_price_gas;
+			if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto selling_price_gas;	
+	}
+			else if(selling_price_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto selling_price_gas;	
+	}
+			for(int i=1;i<= number_of_tromba;i++){
+				trnaba_number_gas:
+		cout<<"Enter the trnaba_number of gas"<<endl;
+		cin>>trnaba_number_gas[i];
+				if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto trnaba_number_gas;	
+	}
+			else if(trnaba_number_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto trnaba_number_gas;	
+	}
+		cout<<"Enter the employee name of gas"<<endl;
+		cin>>employee_name_tromba_gas[i];
+		read_the_previous_tromba_gas:
+		cout<<"Enter the read the previous tromba of gas"<<endl;	
+		cin>>read_the_previous_tromba_gas[i];
+	    if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto read_the_previous_tromba_gas;	
+	}
+			else if(read_the_previous_tromba_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto read_the_previous_tromba_gas;	
+	}
+	current_trumpet_reading_gas:
+		cout<<"Enter the current trumpet reading of gas"<<endl;
+		cin>>current_trumpet_reading_gas[i];
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto current_trumpet_reading_gas;	
+	}
+			else if(current_trumpet_reading_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto current_trumpet_reading_gas;	
+	}
+	quantity_of_literes_sold_in_one_tromba_gas[i]=current_trumpet_reading_gas[i]-read_the_previous_tromba_gas[i];
+        quantity_of_literes_sold_in_all_tromba_gas+= quantity_of_literes_sold_in_one_tromba_gas[i];
+        quantity_of_money_sold_in_one_tromba_gas[i]=quantity_of_literes_sold_in_one_tromba_gas[i] * selling_price_gas;
+        quantity_of_money_sold_in_all_tromba_gas=quantity_of_literes_sold_in_all_tromba_gas * selling_price_gas;
+        
+        }
+           cout<<"quantity of literes sold in all tromba gas = "<<quantity_of_literes_sold_in_all_tromba_gas<<endl;
+        cout<<"quantity of money sold in all tromba gas = "<<quantity_of_money_sold_in_all_tromba_gas<<endl;
+        outputs2+=quantity_of_money_sold_in_all_tromba_gas;
+	}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+		cout<<"Enter any key for back\n";
+	getch();
+	}
+	void daily_sales(){
+	system("cls");
+		if(st_ins!=0){
+		do{
+	choooes:
+		cout<<"Enter 1 for petrol ,2 for diesel , 3 for gas , or enter any number for exit"<<endl;
+		cin>>choooes;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto choooes;	
+	}
+				else if(choooes<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto choooes;	
+	}
+		switch(choooes){
+			case 1:
+	  petrol();
+        break;
+        case 2:
+      diesel();
+        break;
+        case 3:;
+      gas();
+        break;
+         	}
+      	}while(choooes==1 || choooes==2 || choooes==3);
+		}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+		cout<<"Enter any key for back\n";
+	getch();
+		}
+};
+	class Output :public Sales{ //in this calculation zakat or miscellaneous output or profits are calculated
+	public:
+	
+	void zakat_fun (){
+		system("cls");
+		if(st_ins!=0){
+		zakat:	
+		cout<<"Enter the amount of zakat"<<endl;
+		cin>>zakat;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto zakat;	
+	}
+				else if(zakat<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto zakat;	
+	}
+		outputs2=outputs2-zakat;
+	
+		}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n\n";
+		}
+	}
+
+	void miscellaneous( ){
+		system("cls");
+	if(st_ins!=0){ 
+	all_miscellaneous=0;
+	
+	    do{
+	choose:
+	    		cout<<"choose 1 for add miscellaneous or 2 for exit"<<endl;
+	    	cin>>choose;
+	   	if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto choose;	
+	}
+		else if(choose<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto choose;	
+	}
+	    		switch(choose){
+	    	case 1:
+	    		for_miscellaneous:
+	     cout<<"How much  the miscellaneous "<<endl;
+	    cin>>for_miscellaneous;	
+	    if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto for_miscellaneous;	
+	}
+		else if(for_miscellaneous<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto for_miscellaneous;	
+	}
+
+	    cout<<"Enter details for miscellaneous:"<<endl;
+	    cin>>notes_for_miscellaneous;
+
+	    all_miscellaneous=all_miscellaneous+for_miscellaneous;
+	    outputs2=outputs2-all_miscellaneous;
+	    	break;
+	
+	
+	case 2:
+		
+	break;
+	}
+	}while(choose!=2);
+	}
+        else{
+       cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+cout<<"Enter any key for back\n";
+	getch();
+	}
+	void profits(){
+		system("cls");
+if(st_ins!=0){
+	cout<<"first capital  ="<<outputs1<<endl;
+	cout<<"second capital = "<<outputs2<<endl;
+		the_profits=outputs2-outputs1;
+		cout<<"profits are: "<<the_profits<<endl;
+		outputs1+=the_profits;
+		cout<<"Your balance after profit = "<<outputs1<<endl;
+	}
+        else{
+cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";		}
+cout<<"Enter any key for back\n";
+	getch();
+	}
+	void choes_outputs(){
+		system("cls");
+			if(st_ins!=0){
+			int c;
+		do{
+		c:
+			cout<<"Choose 1 to deduct the annual zakat, or choose 2 to deduct the outputs , or choose 3 to calculate the profits , or choose any number to exit.\n";
+			cin>>c;
+	 	if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto c;	
+	}
+		else if(c<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto c;	
+	}
+			switch(c){
+			case 1:
+			zakat_fun ();
+			break;
+		    case 2:
+			miscellaneous( );
+			break;
+			case 3:
+			profits();			
+			break;		
+			}
+			
+		}while(c==1||c==2||c==3);
+	}
+        else{
+cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";		}
+	cout<<"Enter any key for back\n";
+	getch();
+	}
+
+};
+
+
+class Employees: public Output{//in this class the process of adding or deleting employees and calculating their salaries or reviewing all employees takes place
+	
+	public:
+		int i=0;
+		void employee_add_delete(){
+			system("color 9f");
+			system("cls");
+if(st_ins!=0){
+	
+		do{
+			system("cls");
+			choosse:
+			cout<<"\n   Choose 1 to add employees ,2 to delete an employee,3 to view all employee ,\n   4 to calculate how much is the employee's,    and choose any number  to exit "<<endl;
+			cin>>choosse;
+				   	if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto choosse;	
+	}  
+		else if(choosse<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto choosse;	
+	}
+			switch(choosse){
+				case 1:
+		number_of_employees:
+		cout<<"How many employees do you want to add?"<<endl;
+		cin>>number_of_employees;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto number_of_employees;	
+	}
+		else if(number_of_employees<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto number_of_employees;	
+	}
+
+	number_of_employees+=i;
+		for(i;i<number_of_employees;i++){
+					
+		cout<<"employee_name"<<endl;
+		cin>>employee_name[i];
+		
+		employee_number:
+		cout<<"employee_number"<<endl;
+		cin>>employee_number[i];
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto employee_number;	
+	}
+		else if(employee_number[i]<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto employee_number;	
+	}
+	ID_card_number:
+		cout<<"ID_card_number"<<endl;
+		cin>>ID_card_number[i];
+		
+			if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto ID_card_number;
+			}
+				else if(ID_card_number[i]<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto ID_card_number;	
+	}
+			for(int j=0;j<i;j++){
+			 if(ID_card_number[i]==ID_card_number[j]){
+					cout<<"ID card number already exists"<<endl;
+					cout<<" Enter ID_card_number again"<<endl;
+					goto ID_card_number;
+				}
+				
+				}
+					cout<<"Where are you living"<<endl;
+			    	cin>>address[i];
+			    	
+		salary:
+		cout<<"How much is his salary"<<endl;
+		cin>>salary[i];
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto salary;	
+	}
+				else if(salary[i]<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto salary;	
+	}
+	si1ze++;
+					
+					
+				}
+						cout<<"Enter any key for back\n";
+	getch();
+				break;
+			
+				case 2:
+				ID_card_number_user:	
+		cout<<"enter the id number of the employee you want to delete"<<endl;
+		cin>>ID_card_number_user;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto ID_card_number_user;	
+	}
+				else if(ID_card_number_user<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto ID_card_number_user;	
+	}
+
+					for(int i=0;i<si1ze;i++){
+						if(ID_card_number_user==ID_card_number[i])	{
+							employee_name[i]=employee_name[si1ze-1];
+							employee_number[i]=employee_number[si1ze-1];
+							ID_card_number[i]=ID_card_number[si1ze-1];
+							address[i]=address[si1ze-1];
+							salary[i]=salary[si1ze-1];
+							si1ze--;
+							st=3;
+							this->i--;
+						}
+						
+					}
+					if(st==3){
+						
+						cout<<"employee deleted\n";
+						st=1;
+					}
+					else{
+						cout<<"i'dont finde\n";
+					}
+							cout<<"Enter any key for back\n";
+	getch();
+					break;
+					case 3:
+						if(si1ze==0){
+							cout<<"----------((((((((Sory you dont have any employee))))))))-------------\n-------------------\n";
+						}
+						else{
+								for(int i=0;i<si1ze;i++){
+					cout<<"employee name: "<<employee_name[i]<<endl;
+					cout<<"employee number: "<<employee_number[i]<<endl;
+					cout<<"ID card number: "<<ID_card_number[i]<<endl;
+					cout<<"Where are you living: "<<address[i]<<endl;
+					cout<<"How much is his salary: "<<salary[i]<<endl;
+				}
+						}
+			cout<<"Enter any key for back\n";
+	getch();			
+				break;
+				case 4:
+					ID:
+					cout<<"enter the id number of the employee the one you want to calcuate is his remaining salary"<<endl;
+					cin>>ID_card_number_user;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto ID;	
+	}
+				else if(ID_card_number_user<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto ID;	
+	}
+			for(int i=0;i<si1ze;i++){
+						if(ID_card_number_user==ID_card_number[i])	{
+							salary_received=0;
+						
+							cout<<"The rest is for the employee's account :ID ="<<ID_card_number[i]<<endl;
+							
+							
+									
+					cout<<"How much money did the employee receive ?"<<endl;
+				    cin>>salary_received;
+				    	 if(salary[i]<salary_received){
+						cout<<"your money is less than the amount you want to withdraw check with the manager if you want an advance\n";
+						st=3;
+					}
+				   else if(outputs2<salary_received){
+				    	cout<<"we don't have enough liquidity"<<endl;
+				    	st=3;
+					}
+				
+				
+					else{    
+					salary[i]-=salary_received;
+					outputs2-=salary_received;
+				    cout<<"The rest of the bill = "<<salary[i]<<endl;
+                       st=3;
+					}
+				
+						}	
+							
+						}	
+							if(st==3){
+						st=1;
+					}
+					else{
+						cout<<"i'dont finde\n";
+					}
+		
+		
+					cout<<"Enter any key for back\n";
+	getch();
+		break;	
+		}
+		}while(choosse==1 || choosse==2||choosse==3||choosse==4);
+
+		}
+        else{
+cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";		}
+		cout<<"Enter any key for back\n";
+	getch();
+		}
+			
+};
+
+class Purchase  :public Employees{//in this class the process of purchasing petroleum ,diesel or gas is carried out 
+	public:
+	
+			void buy_petrol(){
+				system("cls");
+				if(st_ins!=0){
+		    cout<<"Existing in the petrole tank = "<<mq_petrol<<endl;
+		    liters_of_demand_petrol:
+ 			cout<<"How many liters do you want to buy petrol"<<endl;
+ 			cin>>liters_of_demand_petrol;
+ 					if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto liters_of_demand_petrol;	
+	}
+				else if(liters_of_demand_petrol<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto liters_of_demand_petrol;	
+	}
+	price_per_liter_petrol:
+ 			cout<<"What is the price of a liter of purchase?"<<endl;
+ 			cin>>price_per_liter_petrol;
+ 		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto price_per_liter_petrol;	
+	}
+				else if(price_per_liter_petrol<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto price_per_liter_petrol;	
+	}
+ 			resulting_petrol=liters_of_demand_petrol*price_per_liter_petrol;
+ 			
+			 if(outputs2<resulting_petrol){
+ 				cout<<"you don't have enough money"<<endl;
+ 				
+			 }
+			 else{
+			 	outputs2-=resulting_petrol;
+			 	cout<<"you completed your purchase successfully"<<endl;
+			 	mq_petrol+=liters_of_demand_petrol;
+			 	cout<<"	The amount of petrol after filling = "<<mq_petrol<<endl;
+			 }
+			 }
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+		cout<<"Enter any key for back\n";
+	getch();
+			}
+				void buy_diesel(){
+					system("cls");
+					if(st_ins!=0){
+					cout<<"Existing in the diesel tank =  "<<mq_diesel<<endl;
+					liters_of_demand_diesel:
+					cout<<"How many liters do you want to buy diesel"<<endl;
+ 			cin>>liters_of_demand_diesel;
+ 				if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto liters_of_demand_diesel;	
+	}
+				else if(liters_of_demand_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto liters_of_demand_diesel;	
+	}
+	price_per_liter_diesel:
+ 			cout<<"What is the price of a liter of purchase?"<<endl;
+ 			cin>>price_per_liter_diesel;
+ 						if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto price_per_liter_diesel;	
+	}
+				else if(price_per_liter_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto price_per_liter_diesel;	
+	}
+ 			resulting_diesel=liters_of_demand_diesel*price_per_liter_diesel;
+ 			
+ 			if(outputs2<resulting_diesel){
+ 				
+ 				cout<<"you don't have enough money"<<endl;
+ 				
+			 }
+			 else{
+			 	outputs2-=resulting_diesel;
+			 mq_diesel+=liters_of_demand_diesel;
+			 	cout<<"you completed your purchase successfully"<<endl;
+			 	cout<<"The amount of diesel after filling = "<<mq_diesel<<endl;
+			 }
+			}
+        else{
+cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+	cout<<"Enter any key for back\n";
+	getch();
+		}
+	
+				void buy_gas(){
+					system("cls");
+					if(st_ins!=0){
+			cout<<"Existing in the gas tank =  "<<mq_gas<<endl;
+			liters_of_demand_gas:
+			cout<<"How many liters do you want to buy "<<endl;
+ 			cin>>liters_of_demand_gas;
+ 		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto liters_of_demand_gas;	
+	}
+				else if(liters_of_demand_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto liters_of_demand_gas;	
+	}
+	price_per_liter_gas:
+ 			cout<<"What is the price of a liter of purchase?"<<endl;
+ 			cin>>price_per_liter_gas;
+ 				if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto price_per_liter_gas;	
+	}
+				else if(price_per_liter_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto price_per_liter_gas;	
+	}
+ 			resulting_gas=liters_of_demand_gas*price_per_liter_gas;
+ 			if(outputs2<resulting_gas){
+ 				cout<<"you don't have enough money"<<endl;
+ 				
+			 }
+			 else{
+			 	outputs2-=resulting_gas;
+			 	cout<<"you completed your purchase successfully"<<endl;
+			 	mq_gas+=liters_of_demand_gas;
+			 	cout<<"The amount of gas after filling ="<<mq_gas<<endl;
+			 }
+			 }
+        else{
+cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";		}
+			 
+				
+	cout<<"Enter any key for back\n";
+	getch();}
+		void buy(){
+			system("color b0");
+			system("cls");
+			if(st_ins!=0){
+		do{
+			choes_buy:
+		cout<<"chooes the item you want to purchase : 1 for petrol, 2 for diesel, 3 for gas, or enter any number for exit \n";
+		cin>>choes_buy;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto choes_buy;	
+	}
+				else if(choes_buy<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto choes_buy;	
+	}
+		
+		switch(choes_buy)
+		{
+			case 1:
+			buy_petrol();
+			break;
+			case 2:
+			buy_diesel();		
+			break;
+			case 3:
+			buy_gas();
+			break;
+		}
+		}while(choes_buy==1|| choes_buy==2||choes_buy==3);
+}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+		cout<<"Enter any key for back\n";
+	getch();
+	}
+
+};
+
+class Story_management :public Purchase {//in this class it calculates how much stock he has sets a specific ceiling and buys from here if the user wants
+public:
+	
+void The_remaining_liters(){
+	system("cls");
+	if(st_ins!=0){
+	The_remaining_liters_petrol=0;
+	The_remaining_liters_diesel=0;
+	The_remaining_liters_gas=0;
+	The_remaining_liters_petrol:
+	cout<<"Determine the minimum tank capacity to give you a warning for petrol"<<endl;
+cin>>The_remaining_liters_petrol;
+	if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto The_remaining_liters_petrol;	
+	}
+				else if(The_remaining_liters_petrol<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto The_remaining_liters_petrol;	
+	}
+	The_remaining_liters_diesel:
+cout<<"Determine the minimum tank capacity to give you a warning for diesel"<<endl;
+cin>>The_remaining_liters_diesel;
+	if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto The_remaining_liters_diesel;	
+	}
+				else if(The_remaining_liters_diesel<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto The_remaining_liters_diesel;	
+	}
+	The_remaining_liters_gas:
+cout<<"Determine the minimum tank capacity to give you a warning for gas"<<endl;
+cin>>The_remaining_liters_gas;
+	if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto The_remaining_liters_gas;	
+	}
+				else if(The_remaining_liters_gas<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto The_remaining_liters_gas;	
+	}
+}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+				cout<<"Enter any key for back\n";
+	getch();
+}		
+ void storage(){
+ 	system("color 8f");
+ 	system("cls");
+ 	if(st_ins!=0){
+mq_petrol-=quantity_of_literes_sold_in_all_tromba_petrol;
+mq_diesel-= quantity_of_literes_sold_in_all_tromba_diesel;
+mq_gas-= quantity_of_literes_sold_in_all_tromba_gas;
+
+ 	do{
+chooes_purchase:
+	system("cls");
+ cout<<"  choose the store you want to query : 1 for petrol, 2 for diesel,\n  3 for gas,4 for Determine the minimum tank capacity to give you a warning for petrol\n  or enter any number for exit"<<endl;
+cin>>chooes_purchase;
+	if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto chooes_purchase;	
+	}
+					else if(chooes_purchase<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto chooes_purchase;	
+	}
+switch(chooes_purchase){
+case 1:
+system("cls");
+if(mq_petrol<The_remaining_liters_petrol){
+	cout<<"the tank is running low "<<endl;
+	cout<<"Residual petrol ="<<mq_petrol<<endl;
+	z:
+	cout<<"do you want to fill? press 1 to complete 2 to exit "<<endl;
+	cin>>z;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto z;	
+	}
+					else if(z<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto z;	
+	}
+	switch(z){
+		case 1:
+				system("cls");
+		buy_petrol();
+
+		break;
+		case 2:
+			continue;
+	}
+	
+}
+else if (mq_petrol==The_remaining_liters_petrol){
+	cout<<"The tank is equal to the limit he spcified"<<endl;
+	cout<<"Residual petrol ="<<mq_petrol<<endl;
+	z1:
+	cout<<"do you want to fill? press 1 to complete 2 to exit "<<endl;
+	cin>>z;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto z1;	
+	}
+					else if(z<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto z1;	
+	}
+	switch(z){
+		case 1:
+system("cls");			
+		buy_petrol();
+		break;
+		case 2:
+			continue;
+	}
+}
+else{
+	cout<<"Residual petrol ="<<mq_petrol<<endl;
+}
+if(mq_petrol==1000){
+	cout<<"The tank is empty"<<endl;
+	cout<<"Residual petrol ="<<mq_petrol<<endl;
+}
+			
+	getch();
+break;
+case 2:
+system("cls");
+if(mq_diesel<The_remaining_liters_diesel){
+	cout<<"the tank is running low "<<endl;
+	cout<<"Residual diesel ="<<mq_diesel<<endl;
+	z3:
+		cout<<"do you want to fill? press 1 to complete 2 to exit "<<endl;
+	cin>>z;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto z3;	
+	}
+					else if(z<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto z3;	
+	}
+	switch(z){
+		case 1:
+		system("cls");
+		buy_diesel();
+		break;
+		case 2:
+			continue;
+	}
+}
+else if (mq_diesel==The_remaining_liters_diesel){
+	cout<<"The tank is equal to the limit he spcified"<<endl;
+	z4:
+	cout<<"do you want to fill? press 1 to complete 2 to exit "<<endl;
+	cin>>z;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto z4;	
+	}
+					else if(z<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto z4;	
+	}
+	switch(z){
+		case 1:
+			system("cls");
+		buy_diesel();
+		break;
+		case 2:
+			continue;
+	}
+}
+else{
+	cout<<"Residual diesel ="<<mq_diesel<<endl;
+}
+if(mq_diesel==1000){
+	cout<<"The tank is empty"<<endl;
+}
+
+	getch();
+break;
+case 3:
+system("cls");
+if(mq_gas<The_remaining_liters_gas){
+	cout<<"the tank is running low "<<endl;
+	cout<<"Residual gas ="<<mq_gas<<endl;
+	z5:
+		cout<<"do you want to fill? press 1 to complete 2 to exit "<<endl;
+	cin>>z;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto z5;	
+	}
+					else if(z<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto z5;	
+	}
+	switch(z){
+		case 1:
+			system("cls");
+		buy_gas();
+		break;
+		case 2:
+			continue;
+	}
+}
+else if (mq_gas==The_remaining_liters_gas){
+	cout<<"The tank is equal to the limit he spcified"<<endl;
+	cout<<"Residual gas ="<<mq_gas<<endl;
+	z6:
+	cout<<"do you want to fill? press 1 to complete 2 to exit "<<endl;
+	cin>>z;
+		if(cin.fail()){
+		cout<<"incorrect value"<<endl;
+		cin.clear();
+		cin.ignore();
+		cout<<"please enter the correct value again"<<endl;
+		goto z6;	
+	}
+					else if(z<0){
+		cout<<"Enter integer numbers.It is not permissible to enter negative numbers."<<endl;
+			goto z6;	
+	}
+	switch(z){
+		case 1:
+			system("cls");
+		buy_gas();
+		break;
+		case 2:
+			continue;
+	}
+}
+else{
+	cout<<"Residual gas ="<<mq_gas<<endl;
+	
+}
+if(mq_gas==1000){
+	cout<<"The tank is empty"<<endl;
+}
+		
+	getch();
+break;
+case 4:
+	system("cls");
+The_remaining_liters();
+break;	
+ }	
+
+
+	 }while(chooes_purchase==1||chooes_purchase==2||chooes_purchase==3||chooes_purchase==4);
+}
+        else{
+        	cout<<"\n-------------(((((((((((Pleese first singin the acoount)))))))))))-------------\n\n";
+		}
+	
+}
+};
+
+
+int main(){
+	Story_management stor__obj;
+	
+int chooes_main;
+do{
+system("color f0");
+	system("cls");
+cout<<" \t -----------------------------------------\n ";
+cout<<"\t |                                       |\n";
+cout<<"\t |";
+cout<<"\t((Programmers:Hussin Swilhe,\t |\n\t |\t\tElias Alnadary,\t\t |\n\t |\t      Abdalfatah Alkwbary,\t |\n\t |\t\tAhmed Adel and\t\t |\n\t |\t      Alhussin ALhamly))"<<"\t |"<<endl;
+cout<<"\t |";
+cout<<" \t ************************** "<<"\t |"<<endl;
+cout<<"\t |";
+     cout<<" \t *   ---Fuel station---   * "<<"\t |"<<endl;
+
+  cout<<"\t |";
+cout<<" \t ************************** "<<"\t |"<<endl;
+
+
+cout<<"\t |";
+cout<<"1. Enter 1 to start using the program."<<" |"<<endl;
+cout<<"\t |";
+cout<<" \t -------------------------- "<<"\t |"<<endl;
+cout<<"\t |";
+cout<<"2. Enter 2 to add employees.\t"<<"\t |"<<endl;
+cout<<"\t |";
+cout<<" \t -------------------------- "<<"\t |"<<endl;
+cout<<"\t |";
+cout<<"3. Enter 3 to inquire about the stores."<<"|"<<endl;
+cout<<"\t |";
+cout<<" \t -------------------------- "<<"\t |"<<endl;
+cout<<"\t |";
+cout<<"4. Enter 4 to buy."<<"\t\t\t |"<<endl;
+cout<<"\t |";
+cout<<" \t -------------------------- "<<"\t |"<<endl;
+cout<<"\t |";
+cout<<"5. Enter 5 to inquire about sales\t |\n\t |\t of trumpets."<<"\t\t\t |"<<endl;
+cout<<"\t |";
+cout<<" \t -------------------------- "<<"\t |"<<endl;
+cout<<"\t |";
+cout<<"6.Enter 6 to calculate daily outputs,\t |\n\t |   to deduct the annual zakat amount,  |\n\t |\tor to calculate daily profits."<<"   |"<<endl;
+cout<<"\t |";
+cout<<" \t -------------------------- "<<"\t |"<<endl;
+cout<<"\t |";
+cout<<"\t 7. exit"<<"\t\t\t |"<<endl;
+cout<<"\t |";
+cout<<"\t Select option:"<<"\t\t\t |"<<endl;
+cout<<"\t |                                       |\n";
+cout<<" \t -----------------------------------------";cin>>chooes_main;
+switch(chooes_main){
+case 1:
+stor__obj.initialize();
+
+break;
+case 2:
+stor__obj.employee_add_delete()	;
+break;
+case 3:
+stor__obj.storage();
+break;
+case 4:
+stor__obj.buy();
+break;
+case 5:
+stor__obj.daily_sales();
+break;
+case 6:
+stor__obj.choes_outputs();
+break;
+}	
+}while(chooes_main==1||chooes_main==2||chooes_main==3||chooes_main==4||chooes_main==5||chooes_main==6); 
+}
